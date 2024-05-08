@@ -1,89 +1,73 @@
-﻿# assignment
-MERN Stack Coding Challenge
+# Transaction Analytics Dashboard
 
-Backend Task
-Data Source
-THIRD PARTY API URL : https://s3.amazonaws.com/roxiler.com/product_transaction.json
-REQUEST METHOD : GET
-RESPONSE FORMAT : JSON
-GET
-Create API to initialize the database. fetch the JSON from the third party API and
-initialize the database with seed data. You are free to define your own efficient table /
-collection structure
-Instruction
-All the APIs below should take month ( expected value is any month between
-January to December) as an input and should be matched against the field
-dateOfSale regardless of the year.
-GET
-Create an API to list the all transactions
-- API should support search and pagination on product transactions
-- Based on the value of search parameters, it should match search text on product
-title/description/price and based on matching result it should return the product
-transactions
-- If search parameter is empty then based on applied pagination it should return all the
-records of that page number
-- Default pagination values will be like page = 1, per page = 10
+The Transaction Analytics Dashboard is a web application that allows users to analyze transaction data using various visualizations like tables, charts, and graphs. It provides insights into transaction trends, sales performance, and product categories.
 
-GET
-Create an API for statistics
-- Total sale amount of selected month
-- Total number of sold items of selected month
-- Total number of not sold items of selected month
+## Setup and Installation
 
-GET
-Create an API for bar chart ( the response should contain price range and the number
-of items in that range for the selected month regardless of the year )
-- 0 - 100
-- 101 - 200
-- 201-300
-- 301-400
-- 401-500
-- 501 - 600
-- 601-700
-- 701-800
-- 801-900
-- 901-above
+### Prerequisites
 
-GET
-Create an API for pie chart Find unique categories and number of items from that
-category for the selected month regardless of the year.
-For example :
-- X category : 20 (items)
-- Y category : 5 (items)
-- Z category : 3 (items)
+- Node.js (version 12 or higher)
+- npm (Node Package Manager)
 
-GET
-Create an API which fetches the data from all the 3 APIs mentioned above, combines
-the response and sends a final response of the combined JSON
+### Installation
 
-Frontend Task
+1. Clone the repository:
 
-By using above created apis, create the following table and charts on single page.
-Follow the given mockups and you can implement your own design to change the
-look and feel
-Transctions Table
+git clone <repository-url>
 
-- Here use your transactions listing api to list transactions in the table
-- Select month dropdown should display Jan to Dec months as an options
-- By default March month should be selected
-- Table should list the transactions of the selected month irrespective of the
-year using API
-- Search transaction box should take an input and if search text is matching
-with anyone of these title/description/price then those transactions of the
-selected month should come in the list using API
-- If user clear’s the search box then initial list of transactions should be
-displayed for the selected month using API
-- On click of Next it should load the next page data from API
-- On click of Previous it should load the previous page data from API
+css
+Copy code
 
-Transctions Statistics (Use your created API to fetch the data)
+2. Navigate to the project directory:
 
-- Here display total amount of sale, total sold items, and total not sold item
-in the box for the selected month from the drop down (present above table)
-using API
+cd transaction-analytics-dashboard
 
-Transactions Bar Char (Use your created API to fetch the data)
+markdown
+Copy code
 
-- Chart should display the price range and the number of items in that range for
-the selected month irrespective of the year using API
-- Month selected from dropdown (above the table) should be applied here
+3. Install dependencies:
+
+npm install
+
+markdown
+Copy code
+
+### Running the Application
+
+1. Start the backend server:
+
+npm run server
+
+markdown
+Copy code
+
+2. Start the frontend development server:
+
+npm start
+
+markdown
+Copy code
+
+3. Open your browser and navigate to `http://localhost:3000` to view the application.
+
+## Features
+
+- View a list of transactions with details like product name, price, date of sale, category, and description.
+- Search for transactions based on title, description, or price.
+- Filter transactions by month and view statistics for each month.
+- Visualize transaction data using pie charts and bar charts.
+- Analyze sales performance, including total sale amount, number of sold items, and number of unsold items.
+- Dynamically update charts based on user selections.
+
+## API Endpoints
+
+- `/api/transactions`: Retrieves transaction data.
+- `/api/search`: Searches transactions based on title, description, or price.
+- `/api/statistics`: Provides statistics for a selected month.
+- `/api/pieChart`: Retrieves data for pie chart visualization.
+- `/api/barChart`: Retrieves data for bar chart visualization.
+
+## Technologies Used
+
+- Frontend: React.js, Chart.js, Axios, Bootstrap
+- Backend: Node.js, Express.js, MongoDB
