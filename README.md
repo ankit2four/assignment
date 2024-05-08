@@ -13,40 +13,25 @@ The Transaction Analytics Dashboard is a web application that allows users to an
 
 1. Clone the repository:
 
-git clone <repository-url>
-
-css
-Copy code
+```git clone <repository-url>```
 
 2. Navigate to the project directory:
+3. 
+```create directory and clone frontend and backend```
 
-cd transaction-analytics-dashboard
+4. Install dependencies:
 
-markdown
-Copy code
-
-3. Install dependencies:
-
-npm install
-
-markdown
-Copy code
+```npm install <package>```
 
 ### Running the Application
 
 1. Start the backend server:
 
-npm run server
-
-markdown
-Copy code
+```npm run server```
 
 2. Start the frontend development server:
 
-npm start
-
-markdown
-Copy code
+```npm start```
 
 3. Open your browser and navigate to `http://localhost:3000` to view the application.
 
